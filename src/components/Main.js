@@ -50,7 +50,7 @@ class Main extends React.Component {
 	render() {
 		return (
 			<Row>
-				<Col lg={3}>
+				<Col lg={5}>
 					<Repair>
 						Качественный ремонт
 						<span>iphone за 35 минут и гарантия 1 год</span>
@@ -63,7 +63,7 @@ class Main extends React.Component {
 					<CallButton>Отправить заявку
 					</CallButton>
 				</Col>
-				<Col lg={3} lgOffse={1}>
+				<Col lg={6} lgOffse={1}>
 					<Slider />
 				</Col>
 			</Row>
