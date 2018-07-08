@@ -85,9 +85,9 @@ class Slider extends React.Component{
 	}
 	// 1 end
 	SetSliderStyles() {
-		const transition = this.state.active * - 100 / this.state.sliders.length
-		return {
-			width: (this.state.sliders.length * 100) + "%",
+		const transition = this.state.active * - 100 / this.state.slides.length
+		    return {
+			width: (this.state.slides.length * 100) + "%",
 //			width: (this.state.max * 100)+"%",
 			transform: `translateX(${transition}%)`
 		}
