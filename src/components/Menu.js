@@ -37,12 +37,13 @@ class Adress extends React.Component {
 }
 
 const CallButton= styled.button`
-width: 176px;
-height: 48px;
-border-radius:30px;
-background-color: #3fc7db;
+	width: 176px;
+	height: 48px;
+	border-radius:30px;
+	background-color: #3fc7db;
 
 `
+
 class Menu extends React.Component {
 	render(){
 		return (

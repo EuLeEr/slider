@@ -1,19 +1,19 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
 import Slide1 from '../img/slide-1.jpg';
 import Slide2 from '../img/slide-2.jpg';
 import Slide3 from '../img/slide-3.jpg';
 import Slide4 from '../img/slide-4.jpg';
-
+// 1 start
 class Slider extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
 			slides: [
-			{	eashSlide: `url($(Slyde1})` },
-			{	eashSlide: `url($(Slyde2})` },
-			{	eashSlide: `url($(Slyde3})` },
-			{	eashSlide: `url($(Slyde4})` },
+			{	eachSlide: `url(${Slide1})` },
+			{	eachSlide: `url(${Slide2})` },
+			{	eachSlide: `url(${Slide3})` },
+			{	eachSlide: `url(${Slide4})` },
 			],
 			autoplay:false,
 			active:0,
@@ -35,17 +35,20 @@ class Slider extends React.Component{
 	}
 
 	intervalBetweenSlides(){
-		if(this.state.autoplay == true){
-			if(this.state.active==this.state.max-1){
-				this.state.active = 0;}
+		if(this.state.autoplay === true){
+			if(this.state.active === this.state.max-1){
+				this.state.active = 0}
 
 			else{
-				this.state.active++;
+				this.state.active++ 
 			}
+			this.setState({
+				active: this.setState.active
+			})
 
 		}
 	}
-	// Good
+	
 	toggleAutoPlay(){
 		this.setState({
 			autoplay: !this.state.autoplay
@@ -76,17 +79,17 @@ class Slider extends React.Component{
 		})
 	}
 	isActive(value) {
-		if(this.state.active == value){
+		if(this.state.active === value){
 			return 'active'
 		}
 	}
 	// 1 end
 	SetSliderStyles() {
-		const transition = this.state.active - 100 * this.state.sliders.length
-		return{
-			width: (this.state.sliders.length * 100)+"%",
+		const transition = this.state.active * - 100 / this.state.sliders.length
+		return {
+			width: (this.state.sliders.length * 100) + "%",
 //			width: (this.state.max * 100)+"%",
-			transform: `translateX({$transition}%)`
+			transform: `translateX(${transition}%)`
 		}
 	}
 
@@ -155,22 +158,24 @@ class Slider extends React.Component{
 
 			)
 	}
+	// below right
 	render() {
-//				style={this.SetSliderStyles()}>
 		return(
 			<div className="slider">
 				<div className="wrapper"
-				>
+				style={this.SetSliderStyles()}>
 				{this.renderSlides()}
 				</div>
+
 				{this.renderArrows()}
+
 				<ul className="dots-container">
 					{this.renderDots()}
 				</ul>
 				<a 
 				className="toggle-play"
-				onClick={this.toggleAutoPlay()}>
-				{this.renderPlayStop()}
+				onClick={this.toggleAutoPlay}>
+					{this.renderPlayStop()}
 				</a>
 			</div>		
 			)
